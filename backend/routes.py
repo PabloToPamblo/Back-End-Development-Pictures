@@ -44,7 +44,11 @@ def get_pictures():
 
 @app.route("/picture/<int:id>", methods=["GET"])
 def get_picture_by_id(id):
-    pass
+    for item in data:
+        if item['id'] == id:
+            return item
+    response = make_response("Not Found", 404)
+    return response
 
 
 ######################################################################
