@@ -48,9 +48,11 @@ def test_post_picture(picture, client):
                       content_type="application/json")
     assert res.status_code == 201
     assert res.json['id'] == picture['id']
+    print(res.json)
     res = client.get("/count")
     assert res.status_code == 200
     assert res.json['length'] == 11
+    
 
 def test_post_picture_duplicate(picture, client):
     # create a brand new picture to upload
