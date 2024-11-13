@@ -65,7 +65,7 @@ def create_picture():
     # Add the received data to the list
     for item in data:
         if picture['id'] == item.get('id'):
-            return jsonify({"Message": "picture with id {picture['id']} already present"}), 302
+            return jsonify({"Message": f"picture with id {picture['id']} already present"}), 302
 
     data.append(picture)
     #return jsonify(data), 201
